@@ -35,7 +35,7 @@ module FormtasticBootstrap
 
         def add_on_content(content)
           return nil unless content
-          template.content_tag(:span, content, :class => 'add-on')
+          template.content_tag(:span, content, :class => 'input-group-addon')
         end
 
         def control_group_wrapping(&block)
@@ -74,7 +74,7 @@ module FormtasticBootstrap
 
         def add_on_wrapper_classes(options)
           [:prepend, :append, :prepend_content, :append_content].map do |key|
-            "input-#{key.to_s.gsub('_content', '')}" if options[key]
+            "input-group" if options[key]
           end
         end
       end
